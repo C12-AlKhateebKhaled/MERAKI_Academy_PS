@@ -6,9 +6,17 @@ If the array has an even number of elements, return the average of the two middl
 */
 
 const arrayCenter = (arr) => {
-  // YOUR CODE HERE
-};
+  /*
+1. Sort the array of numbers.
+2. 
 
+*/
+
+  const sortedArray = arr.sort((a, b) => a - b);
+
+  console.log(sortedArray)
+};
+arrayCenter([2, 3, -4, 6, 1, 5])
 /*
 Examples:
 arrayCenter([2, 3, -4, 6, 1, 5]); // => 1
