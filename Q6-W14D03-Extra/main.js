@@ -7,16 +7,19 @@ If the array has an even number of elements, return the average of the two middl
 
 const arrayCenter = (arr) => {
   /*
-1. Sort the array of numbers.
-2. 
+1. Find array length.
+2. If array Length is odd, return the item of index of (array Length / 2)
+3. 
+
 
 */
 
-  const sortedArray = arr.sort((a, b) => a - b);
+  const arrLength = arr.length;
+  const itemIndex = arrLength / 2;
 
-  console.log(sortedArray)
+  console.log(arrLength, itemIndex);
 };
-arrayCenter([2, 3, -4, 6, 1, 5])
+arrayCenter([2, 3, -4, 6, 1, 5]);
 /*
 Examples:
 arrayCenter([2, 3, -4, 6, 1, 5]); // => 1

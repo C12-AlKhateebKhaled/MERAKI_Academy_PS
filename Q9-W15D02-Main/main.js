@@ -8,8 +8,25 @@ Hint: her resource for Regular expressions you can check it and read more (https
 */
 
 const longestWord_2 = (str) => {
-  // YOUR CODE HERE
+  /*
+1. Use regular exepression to match letters.
+2.Find longest word and return it using reduce.
+*/
+  const re = str.match(/\b[a-zA-Z]+\b/g);
+  console.log(re);
+
+  let longest = re.reduce((longestWord, currentWord) => {
+    return currentWord.length > longestWord.length ? currentWord : longestWord;
+  });
+  console.log(longest);
+
+  return longest;
 };
+
+longestWord_2("lol!- time."); // => "time"
+longestWord_2("I** love, cats"); // => "love"
+longestWord_2("coding&& is awesome"); // => "awesome"
+longestWord_2("hello|| world"); // => "hello"
 
 /* 
 Examples:
