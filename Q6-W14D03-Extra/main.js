@@ -15,8 +15,11 @@ const arrayCenter = (arr) => {
 */
 
   const arrLength = arr.length;
-  const itemIndex = arrLength / 2;
-
+  if (arrLength % 2 === 1) {
+    const middleIndex = Math.floor(arrLength / 2);
+    return arr[middleIndex];
+  }
+  
   console.log(arrLength, itemIndex);
 };
 arrayCenter([2, 3, -4, 6, 1, 5]);

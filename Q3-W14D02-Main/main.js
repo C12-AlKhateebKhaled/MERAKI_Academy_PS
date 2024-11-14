@@ -8,7 +8,7 @@ const reverseEachWord = (str) => {
   /*
 1. Split the string into words.
 2.reverse each word.
-3.jpoin back into a string 
+3.join back into a string 
 */
   const splited = str.split(" ");
   const reversedStr = splited
