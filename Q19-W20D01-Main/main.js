@@ -7,8 +7,15 @@
 */
 
 const characterRecurrence = (str) => {
-  // YOUR CODE HERE
+  let Arr = [];
+
+  for (let i = 0; i < str.length; i++) {
+    let counter = 0;
+    Arr.push([str[i], counter]);
+  }
+  console.log(Arr);
 };
+characterRecurrence("mississippi"); // =>  [ ["i", 4],["s", 4],  ["p", 2],  ["m", 1]  ]
 
 /* 
 Examples:
