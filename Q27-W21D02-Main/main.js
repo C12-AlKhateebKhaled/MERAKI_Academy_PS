@@ -6,8 +6,23 @@ If the url does not contain a query string, return undefined
 */
 
 const getQueryString = (url) => {
-  // YOUR CODE HERE
+  const queryString = url.split("?")[1];
+  if (!queryString) return undefined;
+  const result = [];
+
+  const pairs = queryString.split("&").map((pair) => {
+    const [key, value] = pair.split("=");
+    result.push([key, value]);
+  });
+  console.log(result);
+
+  return pairs;
 };
+
+getQueryString("http://example.com?a=lol"); //=> [ [ "a", "lol" ] ]
+getQueryString("http://example.com?a=lol&b=88"); //=> [ [ "a", "lol" ], [ "b", "88" ] ]
+getQueryString("http://example.com?msg=lol%20world"); //=> [ [ "msg", "lol world" ] ]
+getQueryString("http://example.com"); //=> undefined
 
 /* 
 Examples:

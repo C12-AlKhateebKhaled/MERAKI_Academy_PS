@@ -12,7 +12,11 @@ If the username is valid then your program should return the string true, otherw
 */
 
 const usernameValidation = (str) => {
-  // YOUR CODE HERE
+  if (str.length < 4 || str.length > 25) return false;
+  if (!/^[a-zA-Z]/.test(str)) return false;
+  if (!/^[a-zA-Z0-9_]/.test(str)) return false;
+  if (str[str.length - 1] === "_") return false;
+  return true;
 };
 
 /* 
