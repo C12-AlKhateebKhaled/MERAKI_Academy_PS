@@ -7,20 +7,26 @@ If the array has an even number of elements, return the average of the two middl
 
 const arrayCenter = (arr) => {
   /*
-1. Find array length.
-2. If array Length is odd, return the item of index of (array Length / 2)
-3. 
+1. Sort the array in ascending order
+2. Find the middle index.
+3. If array Length is odd, return the item of index of (array Length / 2)
+ */
 
+  // Sort the array in ascending order
+  arr.sort((a, b) => a - b);
 
-*/
-
+  // Find the middle index
   const arrLength = arr.length;
-  if (arrLength % 2 === 1) {
-    const middleIndex = Math.floor(arrLength / 2);
-    return arr[middleIndex];
+  const mid = Math.floor(n / 2);
+
+  // Check if the number of elements is even
+  if (arrLength % 2 === 0) {
+    // Return the average of the two middle elements
+    return (arr[mid - 1] + arr[mid]) / 2;
+  } else {
+    // Return the middle element
+    return arr[mid];
   }
-  
-  console.log(arrLength, itemIndex);
 };
 arrayCenter([2, 3, -4, 6, 1, 5]);
 /*
