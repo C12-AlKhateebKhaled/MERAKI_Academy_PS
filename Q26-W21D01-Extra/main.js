@@ -6,7 +6,22 @@ Ignore any space character.
 */
 
 const timesOfMostFreqChar = (str) => {
-  // YOUR CODE HERE
+  const charFrequency = {};
+
+  // Count frequency of each character, ignoring spaces
+  for (const char of str) {
+    if (char !== ' ') {
+      charFrequency[char] = (charFrequency[char] || 0) + 1;
+    }
+  }
+
+  // Find the maximum frequency
+  let maxFrequency = 0;
+  for (const freq of Object.values(charFrequency)) {
+    maxFrequency = Math.max(maxFrequency, freq);
+  }
+
+  return maxFrequency;
 };
 
 /* 

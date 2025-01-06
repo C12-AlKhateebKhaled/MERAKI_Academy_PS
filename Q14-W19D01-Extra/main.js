@@ -5,7 +5,8 @@ Write a JavaScript function to copy an array.
 */
 
 const array_Copy = (arr) => {
-  // YOUR CODE HERE
+  return [...arr]; // Spread Operator
+  // return arr.slice();  // Slice method
 };
 
 /*

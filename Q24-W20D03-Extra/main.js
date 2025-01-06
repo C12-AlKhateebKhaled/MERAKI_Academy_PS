@@ -6,7 +6,14 @@ Given an integer n, return n! (n factorial)
 */
 
 const findFactorial = (num) => {
-  // YOUR CODE HERE
+  if (num < 0) return "Invalid input. Factorial is not defined for negative numbers.";
+  if (num === 0 || num === 1) return 1; // Base case
+
+  let result = 1;
+  for (let i = num; i > 0; i--) {
+    result *= i;
+  }
+  return result;
 };
 
 /*

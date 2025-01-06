@@ -14,7 +14,6 @@ const getQueryString = (url) => {
     const [key, value] = pair.split("=");
     result.push([key, value]);
   });
-  console.log(result);
 
   return pairs;
 };

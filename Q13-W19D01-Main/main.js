@@ -5,10 +5,22 @@ Find the first item which appear an even number of times in an array.
 */
 
 const evenAppearance = (array) => {
-  console.log(array);
+  const countMap = {};
 
-  // Count apearance of each item
+  // Count the appearance of each item
+  for (let item of array) {
+    countMap[item] = (countMap[item] || 0) + 1;
+  }
 
+  // Find the first item with an even count
+  for (let item of array) {
+    if (countMap[item] % 2 === 0) {
+      return item;
+    }
+  }
+
+  // Return undefined if no item with even appearances is found
+  return undefined;
 };
 evenAppearance([1, 1, 2, 6, 6]);
 /*

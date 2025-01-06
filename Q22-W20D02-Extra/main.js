@@ -15,7 +15,17 @@
 */
 
 const fizzBuzz = (n) => {
-  // your code here
+  for (let i = 1; i <= n; i++) {
+    let prnt;
+    if (i % 3 === 0 && i % 5 === 0) {
+      prnt = "fizzbuzz";
+    } else if (i % 3 === 0) {
+      prnt = "fizz";
+    } else if (i % 5 === 0) {
+      prnt = "buzz";
+    } else prnt = i;
+    console.log(prnt);
+  }
 };
 
-module.exports = {fizzBuzz};
+module.exports = { fizzBuzz };

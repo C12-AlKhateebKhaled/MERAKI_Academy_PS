@@ -5,7 +5,23 @@ Write a function accepts an array of integers and returns the Maximum product po
 */
 
 const maximumProductOfThree = (arr) => {
-  // YOUR CODE HERE
+  if (arr.length < 3) {
+    throw new Error("Array must have at least three numbers");
+  }
+
+  // Sort the array in ascending order
+  arr.sort((a, b) => a - b);
+
+  // Maximum product can be from:
+  // 1. The largest three numbers
+  // 2. The two smallest numbers (if negative) and the largest number
+  const n = arr.length;
+  const maxProduct = Math.max(
+    arr[n - 1] * arr[n - 2] * arr[n - 3], // Three largest numbers
+    arr[0] * arr[1] * arr[n - 1]         // Two smallest and the largest
+  );
+
+  return maxProduct;
 };
 
 /*

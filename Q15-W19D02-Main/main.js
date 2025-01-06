@@ -5,17 +5,21 @@ Write a function calculates the Highest possible sum of any n consecutive number
 */
 
 const findHighestPossibleSum = (arr, num) => {
+  if (num <= 0 || num > arr.length) {
+    return false;
+  }
+
   let maxSum = 0;
   for (let i = 0; i < num; i++) {
     maxSum += arr[i];
   }
-  console.log(maxSum);
   let sum = maxSum;
 
   for (let i = num; i < arr.length; i++) {
-    sum = sum + arr[num + 1];
-    console.log(sum);
+    sum = sum - arr[i - num] + arr[i]; 
+    maxSum = Math.max(maxSum, sum); // Update the maximum sum
   }
+  return maxSum;
 };
 findHighestPossibleSum([10, 2, 3, 4, 2, 6, 8], 1); // => 10
 

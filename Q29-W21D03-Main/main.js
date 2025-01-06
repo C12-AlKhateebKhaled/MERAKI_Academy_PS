@@ -12,7 +12,21 @@ true
 */
 
 const isArmstrong = (num) => {
-  // YOUR CODE HERE
+  // Check if the number is exactly 3 digits
+  if (num < 100 || num > 999) {
+    return false;
+  }
+
+  // Convert the number to a string to iterate over its digits
+  const digits = num.toString().split("");
+
+  // Calculate the sum of the cubes of its digits
+  const sumOfCubes = digits.reduce((sum, digit) => {
+    return sum + Math.pow(parseInt(digit, 10), 3);
+  }, 0);
+
+  // Check if the sum of cubes equals the original number
+  return sumOfCubes === num;
 };
 
 /*

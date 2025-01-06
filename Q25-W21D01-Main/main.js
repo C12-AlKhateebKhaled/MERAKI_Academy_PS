@@ -5,8 +5,19 @@ Write a function returns the length of the longest sequence of 1s in an array of
 */
 
 const longestSequence = (arr) => {
-  // YOUR CODE HERE
-  
+  let maxSequence = 0;
+  let currentSequence = 0;
+
+  for (const num of arr) {
+    if (num === 1) {
+      currentSequence++;
+      maxSequence = Math.max(maxSequence, currentSequence);
+    } else {
+      currentSequence = 0;
+    }
+  }
+
+  return maxSequence;
 };
 
 /*
